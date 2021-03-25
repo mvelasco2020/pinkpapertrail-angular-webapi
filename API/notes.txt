@@ -1,0 +1,49 @@
+------------ API ----------------
+------------ API ----------------
+------------ DB/EntityFramework ----------------
+
+install entity framework core from nugget
+install sqlite 
+add to appsettings.dev.json file
+  "ConnectionStrings": {
+    "DefaultConnection": "Data source=pinkpapertrail.db"
+  }
+
+  create class that inherrits from dbcontext; create dbset
+
+  add dbcontext to startup.cs 
+  services.AddDbContext<StoreContext>(options =>
+                    options.UseSqlite(_config
+                    .GetConnectionString("DefaultConnection")));
+         
+
+dotnet tool list -g
+dotnet tool install --global dotnet-ef --version 5.0.4
+dotnet ef migrations add InitialCreate -o  Data/Migrations
+
+dotnet ef database -g
+dotnet ef database update
+
+------------ DB/EntityFramework ----------------
+
+------------ Projects ----------------
+dotnet new -h
+dotnet new classlib -o Api
+dotnet new classlib -o Core
+dotnet new classlib -o Infrastructure
+dotnet sln add Core
+dotnet sln add Infrastructure
+/api
+dotnet add reference ../Infrastructure
+/infrastructure
+dotnet add reference ../Core
+dotnet restore
+
+------------ Projects ---------------- 
+
+------------ Git ---------------- 
+git status 
+git init
+create .gitignore
+git add .
+------------ Git ---------------- 
