@@ -46,4 +46,5 @@ git status
 git init
 create .gitignore
 git add .
+git remote add origin https://github.com/mvelasco2020/pinkpapertrail-angular-webapi.git
 ------------ Git ---------------- 
