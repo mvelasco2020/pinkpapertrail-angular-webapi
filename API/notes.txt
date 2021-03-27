@@ -24,7 +24,12 @@ dotnet ef migrations add InitialCreate -o  Data/Migrations
 dotnet ef database -g
 dotnet ef database update
 
------------- DB/EntityFramework ----------------
+dotnet ef database drop -p Infrastructure -s API
+dotnet ef migrations remove -p Infrastructure -s API
+
+
+
+------------ DB/EntityFramework/RP ----------------
 
 ------------ Projects ----------------
 dotnet new -h
